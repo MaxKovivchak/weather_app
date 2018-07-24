@@ -1,0 +1,36 @@
+<div class="row row-offcanvas row-offcanvas-right">
+	<div class="col-xs-12">
+		<p class="pull-right visible-xs">
+			<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+		</p>
+		<div class="jumbotron text-center">
+			<h1>Yahoo Weather</h1>
+		</div>
+
+        <div class="col-xs-12" >
+            <h3 class="text-center">Filter city</h3>
+            <div class="list-group">
+                <div class="list-group-item text-center">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+                    </form>
+                </div>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+
+        <div class="col-xs-12 text-center">
+            <h3>
+                Choose your city
+            </h3>
+        </div>
+        <div class="col-xs-4 text-center" ng-repeat="city in cities | filter: search">
+            <div class="city-item">
+                <a href="#/cities/{{city.id}}/{{city.region}}" class="city-link btn btn_lg btn-primary">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    {{city.name}}
+                </a>
+            </div>
+        </div><!--/.col-sm-6.col-lg-4-->
+	</div><!--/.col-xs-12.col-sm-8-->
+
+</div><!--/row-->

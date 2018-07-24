@@ -1,0 +1,32 @@
+[
+  {
+    "name": "kiev",
+    "id": "kiev",
+    "region" : "ua"
+  },
+  {
+    "name": "moscow",
+    "id": "moscow",
+    "region" : "ru"
+  },
+  {
+    "name": "odessa",
+    "id": "odessa",
+    "region" : "ua"
+  },
+  {
+    "name": "lviv",
+    "id": "lviv",
+    "region" : "ua"
+  },
+  {
+    "name": "london",
+    "id": "london",
+    "region" : "uk"
+  },
+  {
+    "name": "berlin",
+    "id": "berlin",
+    "region" : "de"
+  }
+]

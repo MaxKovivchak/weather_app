@@ -1,0 +1,71 @@
+<div class="row">
+
+    <div class="col-xs-12 text-center title">
+        <h1>{{city.title}}</h1>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-8">
+        <div class="row row-item">
+            <div class="col-xs-6">
+                <div class="city-item__description">
+                    Wind
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="city-item__data">
+                    <p>chill: <span>{{city.wind.chill}}</span></p>
+                    <p>direction: <span>{{city.wind.direction}}</span></p>
+                    <p>speed: <span>{{city.wind.speed}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-item">
+            <div class="col-xs-6">
+                <div class="city-item__description">
+                    Atmosphere
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="city-item__data">
+                    <p>humidity: <span>{{city.atmosphere.humidity}}</span></p>
+                    <p>pressure: <span>{{city.atmosphere.pressure}}</span></p>
+                    <p>rising: <span>{{city.atmosphere.rising}}</span></p>
+                    <p>visibility: <span>{{city.atmosphere.visibility}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-item">
+            <div class="col-xs-6">
+                <div class="city-item__description">
+                    Astronomy
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="city-item__data">
+                    <p>sunrise: <span>{{city.astronomy.sunrise}}</span></p>
+                    <p>sunset: <span>{{city.astronomy.sunset}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row row-item">
+            <div class="col-xs-6">
+                <div class="city-item__description">
+                    Condition
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="city-item__data">
+                    <p>date: <span>{{city.item.condition.date}}</span></p>
+                    <p>temp: <span>{{city.item.condition.temp}} {{city.units.temperature}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <h3 class="text-center"><strong>{{city.item.condition.text}}</strong></h3>
+        <img src="img/{{city.item.condition.text}}.png" class="city-item__condition" alt="">
+    </div>
+</div>
