@@ -4,10 +4,12 @@
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
 /* Config */
-weatherApp.config([
-    '$routeProvider',
-    function ($routeProvide) {
-        $routeProvide
+weatherApp.config(['$routeProvider', '$locationProvider', function ($routeProvide, $locationProvider) {
+    $locationProvider.html5Mode({
+        enabled:true,
+        requiredBase:false
+    });
+    $routeProvide
             .when('/', {
                 templateUrl: 'template/home.html',
                 controller: 'CitiesListCtrl'
@@ -27,6 +29,7 @@ weatherApp.config([
             .otherwise({
                 redirectTo: '/'
             });
+
     }
 ]);
 
@@ -48,7 +51,7 @@ weatherApp.factory('city', ['$resource', function ($resource) {
 /* Filter */
 weatherApp.filter('checkmark', function () {
     return function (input) {
-        return input ? '\u2713' : '\u2718';
+        return input > 10 ? '\u2713' : '\u2718';
     }
 });
 
@@ -88,15 +91,18 @@ weatherApp.controller('ContactCtrl', [
 ]);
 
 /* Phone Detail Controller */
-weatherApp.controller('CityDetailCtrl', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+weatherApp.controller('CityDetailCtrl', ['$scope', '$http', '$location', '$routeParams',
+    function ($scope, $http, $location, $routeParams) {
         $scope.cityId = $routeParams.cityId;
         $scope.region = $routeParams.region;
+        $scope.ready = true;
         $scope.url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22{city}%2C%20{region}%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'.replace('{city}', $scope.cityId).replace('{region}', $scope.region);
         $http.get($scope.url, $scope.cityId).success(function (data, status, config) {
             $scope.city = data.query.results.channel;
-            $scope.city.item.condition.text = ($scope.city.item.condition.text).replace(/\s/g, '');
-        })
+            $scope.city.img = ($scope.city.item.condition.text).replace(/\s/g, '');
+            $scope.ready = false;
+        });
     }
-])
+]);
 
 

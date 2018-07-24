@@ -19,6 +19,7 @@
                     <p>chill: <span>{{city.wind.chill}}</span></p>
                     <p>direction: <span>{{city.wind.direction}}</span></p>
                     <p>speed: <span>{{city.wind.speed}}</span></p>
+                    <p>speed more 10: <span>{{city.wind.speed | checkmark}}</span></p>
                 </div>
             </div>
         </div>
@@ -59,13 +60,13 @@
             <div class="col-xs-6">
                 <div class="city-item__data">
                     <p>date: <span>{{city.item.condition.date}}</span></p>
-                    <p>temp: <span>{{city.item.condition.temp}} {{city.units.temperature}}</span></p>
+                    <p>temp: <span>{{city.item.condition.temp}}</span></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-xs-4">
         <h3 class="text-center"><strong>{{city.item.condition.text}}</strong></h3>
-        <img src="img/{{city.item.condition.text}}.png" class="city-item__condition" alt="">
+        <img src="img/{{city.img}}.png" class="city-item__condition" alt="">
     </div>
 </div>

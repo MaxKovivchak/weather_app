@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Weather App</title>
+    <base href="/">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
 </head>
@@ -21,9 +22,9 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/">Home</a></li>
-                    <li><a href="#/about">About</a></li>
-                    <li><a href="#/contact">Contact</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
         </div><!-- /.container -->
@@ -32,6 +33,12 @@
     <div class="container">
 
         <ng-view></ng-view>
+
+        <div class="loading-spiner-holder" ng-if="$scope.ready" >
+            <div class="loading-spiner">
+                <img src="img/preloader.gif" />
+            </div>
+        </div>
 
         <footer>
             <p>&copy; Max Kovyvchak 2018</p>
