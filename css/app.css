@@ -7,9 +7,25 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 body {
-  background:url('../img/Cloudy.gif');
-    background-size: cover;
     color: #fff;
+}
+.background-main.MostlyCloudy{
+    background-image:url('../img/Cloudy.gif');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.background-main.ScatteredShowers{
+    background-image:url('../img/ScatteredShowers.gif');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.background-main{
+    left: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
 }
 footer {
     padding: 5px 0;
