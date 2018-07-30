@@ -1,32 +1,38 @@
 [
   {
-    "name": "kiev",
-    "id": "kiev",
+    "id": "Kiev",
     "region" : "ua"
   },
   {
-    "name": "москва",
-    "id": "москва",
+    "id": "Moscow",
     "region" : "ru"
   },
   {
-    "name": "odessa",
-    "id": "odessa",
-    "region" : "ua"
-  },
-  {
-    "name": "lviv",
-    "id": "lviv",
-    "region" : "ua"
-  },
-  {
-    "name": "london",
-    "id": "london",
+    "id": "London",
     "region" : "uk"
   },
   {
-    "name": "berlin",
-    "id": "berlin",
+    "id": "Berlin",
     "region" : "de"
+  },
+  {
+    "id": "Los Angeles",
+    "region" : "us"
+  },
+  {
+    "id": "Chicago",
+    "region" : "us"
+  },
+  {
+    "id": "Houston",
+    "region" : "us"
+  },
+  {
+    "id": "Tokyo",
+    "region" : "de"
+  },
+  {
+    "id": "Paris",
+    "region" : "fr"
   }
 ]

@@ -8,7 +8,24 @@ body {
 }
 body {
     color: #fff;
-    background-image: url(../img/bg-goodssolutions.jpg);
+    background-image:url('../img/weather.gif');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background-main.MostlyCloudy, .background-main.PartlyCloudy{
+    background-image:url('../img/MostlyCloudy.gif');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.background-main.Cloudy{
+    background-image:url('../img/Cloudy.gif');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.background-main.ScatteredShowers{
+    background-image:url('../img/ScatteredShowers.gif');
+>>>>>>> e3761e757de29dde985ce0018b57d286e4cfd03d
     background-attachment: fixed;
     background-size: cover;
 }
@@ -30,7 +47,14 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
+.list-group-item {
+    max-width: 750px;
+}
+.form-control{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 650px;
+}
 footer {
     padding: 5px 0;
     bottom: 0;
@@ -46,6 +70,8 @@ footer {
 .item-forecast{
     display: flex;
     align-items: center;
+    border: 1px dotted #ccc;
+    padding: 9px 0;
 }
 .forecast h3 {
     margin-bottom:30px;
@@ -74,6 +100,13 @@ footer {
 .title{
     margin: 20px auto 45px;
 }
+
+.around{
+    background: #00000070;
+    border-radius: 6px;
+    padding-bottom: 50px;
+    margin-top: 46px;
+}
 .main-wrapp{
     background: rgba(0, 0, 0, 0.42);
     min-height: 100vh;
@@ -88,7 +121,6 @@ footer {
   margin: 15px auto;
 }
 .list-group-item{
-    max-width: 650px;
     margin: 0 auto;
     background-color: #444;
 }
@@ -97,11 +129,18 @@ footer {
     margin-bottom: 10px;
 }
 .city-link{
-  display: block;
-  text-transform: uppercase;
-  text-align: left;
-  max-width: 150px;
+    text-transform: uppercase;
+    text-align: left;
     margin: 0 auto;
+    color: #fff;
+    border: 1px dotted #fff;
+    padding: 7px 10px;
+    border-radius: 4px;
+}
+.city-link:hover{
+    color: #000;
+    text-decoration: none;
+    background: #fff;
 }
 .city-item__condition{
     display: block;
