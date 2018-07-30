@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 
 /* Config */
 weatherApp.config(['$routeProvider', '$locationProvider', function ($routeProvide, $locationProvider) {
@@ -62,6 +62,27 @@ weatherApp.controller('CitiesListCtrl', [
         city.query({cityId: 'cities'}, function (data) {
             $scope.cities = data;
         });
+
+        $scope.capitals = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+        $scope.add = function(){
+            $scope.obj = new Object;
+            $scope.obj.region = "us";
+            $scope.obj.id = $scope.selected;
+            $scope.cities.push($scope.obj);
+        }
+
+        // $scope.obj = new Object;
+        // $scope.obj.region = $scope.selected;
+        // $scope.obj.id = $scope.addItem;
+        // $scope.cities.push($scope.obj);
+        // $http.get($scope.url).success(function (data) {
+        //     $scope.capitals = data;
+        //     // $scope.alpha2Code = data.alpha2Code;
+        //     // $scope.capital = data.capital;
+        // });
+
+
+
 
         //Phone.query(params, successcb, errorcb)
 
